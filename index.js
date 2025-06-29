@@ -4,6 +4,11 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
+// ➕ Root route for Azure
+app.get('/', (req, res) => {
+  res.send('✅ Hello from Finhub OAuth deployed on Azure!');
+});
+
 app.get('/oauth/callback', (req, res) => {
   const { code, realmId, state } = req.query;
 
